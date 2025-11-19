@@ -1,0 +1,25 @@
+1. Código fuente de las clases “plano” (.java)
+
+Coche.java
+public class Coche {
+
+    String marca;
+    String color;
+    int anio;
+
+}
+
+CuentaBancaria.java
+public class CuentaBancaria {
+
+    String titular;
+    double saldo = 0.0;
+
+    public void depositar(double cantidad) {
+        saldo = saldo + cantidad;
+    }
+
+    public void consultarSaldo() {
+        System.out.println("Saldo actual: " + saldo);
+    }
+}
