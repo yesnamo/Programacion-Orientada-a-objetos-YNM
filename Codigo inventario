@@ -1,0 +1,37 @@
+2. Código fuente de las clases “ejecutoras” (.java)
+
+Inventario.java
+public class Inventario {
+    public static void main(String[] args) {
+
+        Coche coche1 = new Coche();
+        coche1.marca = "Toyota";
+        coche1.color = "Rojo";
+        coche1.anio = 2023;
+
+        System.out.println(coche1.marca);
+        System.out.println(coche1.anio);
+
+        Coche coche2 = new Coche();
+        coche2.marca = "Ford";
+        coche2.color = "Azul";
+        coche2.anio = 2021;
+
+        System.out.println(coche1.marca);
+        System.out.println(coche2.marca);
+    }
+}
+
+Cajero.java
+public class Cajero {
+    public static void main(String[] args) {
+
+        CuentaBancaria miCuenta = new CuentaBancaria();
+
+        miCuenta.titular = "Juan Pérez";
+
+        miCuenta.depositar(150.0);
+
+        miCuenta.consultarSaldo();
+    }
+}
