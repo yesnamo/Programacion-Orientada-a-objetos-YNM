@@ -1,0 +1,19 @@
+// See https://aka.ms/new-console-template for more information
+
+//digitar el nommbre
+
+Console.WriteLine("Escriba su nombre:");
+string nom = Console.ReadLine();
+
+//imprimir
+
+Console.Write("Su nombre es: ");
+
+//imprimir con color y comentario especificado
+
+Console.ForegroundColor = ConsoleColor.Cyan;
+
+Console.WriteLine(nom + " <3 ");
+
+// se restaura el colod original
+Console.ResetColor();
