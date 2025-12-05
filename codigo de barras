@@ -1,0 +1,18 @@
+class Producto {
+    private String codigoBarras; // solo lectura
+    private double precio;       // lectura y escritura
+    // Constructor: código de barras solo se asigna aquí
+    public Producto(String codigoBarras, double precio) {
+        this.codigoBarras = codigoBarras;
+        this.precio = precio;
+    }
+    public String getCodigoBarras() {
+        return this.codigoBarras;
+    }
+    public double getPrecio() {
+        return this.precio;
+    }
+    public void setPrecio(double nuevoPrecio) {
+        this.precio = nuevoPrecio;
+    }
+}
