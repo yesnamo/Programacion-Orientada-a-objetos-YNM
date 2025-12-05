@@ -1,0 +1,108 @@
+public class Main {
+    public static void main(String[] args) {
+        // Scanner usando el nombre completo de la clase
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+
+        // Crear 3 empleados
+        Empleado e1 = new Empleado("Manuel", 30, "diurno");
+        Empleado e2 = new Empleado("Yesid", 45, "nocturno");
+        Empleado e3 = new Empleado("Milher", 18, "diurno");
+
+        Empleado[] empleados = {e1, e2, e3};
+
+        // Mostrar nombres disponibles
+        System.out.println("Empleados disponibles: Manuel, Yesid, Milher");
+        System.out.print("------------------------------------------------------");
+        System.out.print("\nDigite el nombre del empleado a consultar: ");
+        String nombreBuscado = sc.nextLine();
+
+        boolean encontrado = false;
+
+        for (Empleado emp : empleados) {
+            if (emp.getNombre().equalsIgnoreCase(nombreBuscado)) {
+                emp.mostrarDatos();
+
+                // Verificar si la edad es inválida
+                if (emp.getEdad() < 18 || emp.getEdad() > 65) {
+                    System.out.println("Edad no permitida para trabajar");
+                }
+
+                // Verificar si el horario es inválido
+                String horario = emp.getHorario();
+                if (!horario.equalsIgnoreCase("diurno") &&
+                    !horario.equalsIgnoreCase("nocturno")) {
+                    System.out.println("Horario inválido");
+                }
+
+                encontrado = true;
+                break;
+            }
+        }
+
+        if (!encontrado) {
+            //cambio de color a rojo
+            String rojo = "\u001B[31m";
+            String reset = "\u001B[0m";
+            System.out.println(rojo + "No existe un empleado con ese nombre." + reset);
+            
+        }
+    }
+}
+
+class Empleado {
+
+    // Atributos privados
+    private String nombre;
+    private int edad;
+    private String horario; // diurno o nocturno
+
+    // Constructor
+    public Empleado(String nombre, int edad, String horario) {
+        this.nombre = nombre;
+        setEdad(edad);       // usa reglas de negocio
+        setHorario(horario); // usa validación
+    }
+
+    // Getter y Setter del nombre
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public int getEdad() {
+        return edad;
+    }
+
+    public void setEdad(int nuevaEdad) {
+        if (nuevaEdad < 18 || nuevaEdad > 65) {
+            System.out.println("Edad no permitida para trabajar");
+        } else {
+            this.edad = nuevaEdad;
+        }
+    }
+
+    // Getter y Setter del horario (validación)
+    public String getHorario() {
+        return horario;
+    }
+
+    public void setHorario(String horario) {
+        if (horario.equalsIgnoreCase("diurno") ||
+            horario.equalsIgnoreCase("nocturno")) {
+
+            this.horario = horario;
+        } else {
+            System.out.println("Horario inválido, debe ser diurno o nocturno");
+        }
+    }
+
+    // Método para mostrar datos
+    public void mostrarDatos() {
+        System.out.println("Empleado: " + nombre +
+                           "\nEdad: " + edad +
+                           "\nHorario: " + horario);
+    }
+}
