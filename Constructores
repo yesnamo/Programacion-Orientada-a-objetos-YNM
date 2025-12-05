@@ -1,0 +1,26 @@
+public class Main {
+    int x;
+    
+    public Main() {
+        x = 5;
+    }
+
+    public class Cod {
+        int y;
+
+        
+        public Cod() {
+            y = 0;
+        }
+    }
+
+    public static void main(String[] args) {
+        
+        Main myObj1 = new Main();
+      
+        Cod myObj2 = new Main().new Cod();
+
+        System.out.println(myObj1.x);  
+        System.out.println(myObj2.y);  
+        }
+}
