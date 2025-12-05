@@ -1,0 +1,71 @@
+class CuentaBancaria {
+
+    private String nombre;
+    private double saldo;
+
+    public CuentaBancaria(String nombre, double saldo) {
+        this.nombre = nombre;
+        this.saldo = saldo;
+    }
+
+    public String getNombre() {
+        return this.nombre;
+    }
+
+    public double getSaldo() {
+        return this.saldo;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Usamos Scanner sin import, con nombre completo de la clase
+        java.util.Scanner sc = new java.util.Scanner(System.in);
+
+        // Cuentas
+        CuentaBancaria c1 = new CuentaBancaria("Carlos", 500);
+        CuentaBancaria c2 = new CuentaBancaria("Maria", 1200);
+        CuentaBancaria c3 = new CuentaBancaria("Pedro", -200); // saldo negativo
+
+        // Entrada del usuario
+        System.out.print("Digite el nombre de la cuenta: ");
+        String nombreBuscado = sc.nextLine();
+
+        boolean encontrado = false;
+
+        // Carlos
+        if (nombreBuscado.equalsIgnoreCase(c1.getNombre())) {
+            encontrado = true;
+            if (c1.getSaldo() < 0) {
+                System.out.println("Saldo negativo.");
+            } else {
+                System.out.println("Su saldo es de: $" + c1.getSaldo());
+            }
+        }
+        // Maria
+        else if (nombreBuscado.equalsIgnoreCase(c2.getNombre())) {
+            encontrado = true;
+            if (c2.getSaldo() < 0) {
+                System.out.println("Saldo negativo.");
+            } else {
+                System.out.println("Su saldo es de: $" + c2.getSaldo());
+            }
+        }
+        // Pedro
+        else if (nombreBuscado.equalsIgnoreCase(c3.getNombre())) {
+            encontrado = true;
+            if (c3.getSaldo() < 0) {
+                System.out.println("Saldo negativo.");
+            } else {
+                System.out.println("Su saldo es de: $" + c3.getSaldo());
+            }
+        }
+
+        // Si no existe el nombre
+        if (!encontrado) {
+            System.out.println("La cuenta no existe.");
+        }
+        sc.close();
+    }
+}
