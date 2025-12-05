@@ -1,0 +1,51 @@
+public class Main {
+  public void Car(){
+      System.out.println("El automovil se debe encender primero, antes de hacer el debido proceso debe estar en  0Km/h. \t\nPara el proceso de avanzar o reversa continuar con los siguientes pasos correspondientes");
+}
+
+public void speed(int Speed) {
+    System.out.println("Velcocidad inicial" + SpeedN);
+}
+
+public void speed(int Speed) {
+    System.out.println("Velcocidad inicial" + SpeedN);
+}
+
+public void speed(int Speed) {
+    System.out.println("Velcocidad inicial" + SpeedP);
+}
+
+public void speed(int Speed) {
+    System.out.println("Velcocidad inicial" + SpeedR);
+}
+
+
+  public void Clutch() {
+    System.out.println("\n1. La caja de cambios debe estar en neutro");
+  }
+
+  public void CambioP() {
+    System.out.println("\n2. Para avanzar hacia adelante poner el cambio en primera");
+  }
+  
+  public void CambioR() {
+    System.out.println("\n3. Para dar marcha hacia atras debe detener el automovil y poner el cambio en reversa siempre y cuando \nse detenga el carro a 0 Km/h");
+    }
+  
+}
+
+
+
+
+class Second {
+  public static void main(String[] args) {
+    Main myCar = new Main();     // Create a myCar object
+    myCar.Car();              //Car
+    myCar.Clutch();           // Clucth
+    myCar.CambioP();          // Primera
+    myCar.CambioR();          // Reversa
+    myCar.SpeedN(0);		  // Neutro
+    myCar.SpeedP(7);          //Aceleracion
+    myCar.SpeedR(5);          //Reversa
+  }
+}
